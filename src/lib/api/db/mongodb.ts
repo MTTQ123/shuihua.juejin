@@ -15,6 +15,8 @@ let client = new MongoClient(uri, options);
 let clientPromise = client.connect();
 
 export const getClient = async () => {
+  console.log(MONGODB_URI);
+  
   if (await clientPromise) {
     console.log("成功");
     
