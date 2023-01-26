@@ -64,14 +64,19 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     const { tag } = context.query;
 
-    const res = await fetch(`${apiUrl}article/${tag}`).then(res => res.json());
-    const topbars = await fetch(`${apiUrl}/topbar/getAllTopbar`).then(res => res.json());
+    // const res = await fetch(`${apiUrl}article/${tag}`).then(res => res.json());
+    // const topbars = await fetch(`${apiUrl}/topbar/getAllTopbar`).then(res => res.json());
 
     return {
         props: {
             id: tag,
-            postData: res,
-            topList: topbars,
+            postData: [],
+            topList: [],
         }
+        // props: {
+        //     id: tag,
+        //     postData: res,
+        //     topList: topbars,
+        // }
     }
 }
