@@ -1,6 +1,7 @@
 import { MongoClient } from 'mongodb'
+import { mongodbConnection } from 'public/url'
 
-const MONGODB_URI = "mongodb://127.0.0.1:27017"
+const MONGODB_URI = mongodbConnection
 
 if (!MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
