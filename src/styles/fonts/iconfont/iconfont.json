@@ -1,0 +1,86 @@
+{
+  "id": "3864663",
+  "name": "仿掘金",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "29925",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "248953",
+      "name": "delete",
+      "font_class": "delete",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "14732",
+      "name": "向下",
+      "font_class": "xiangxia",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1314429",
+      "name": "眼睛",
+      "font_class": "yanjing",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "2006743",
+      "name": "赞",
+      "font_class": "zan",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "2506177",
+      "name": "举报",
+      "font_class": "jinggao",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "2559462",
+      "name": "评论",
+      "font_class": "pinglun",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "3956064",
+      "name": "VR沉浸式体验",
+      "font_class": "kujialeqiyezhan_VRchenjinshitiyan",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "9568045",
+      "name": "向上",
+      "font_class": "xiangshang",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "11007854",
+      "name": "转发",
+      "font_class": "zhuanfa",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "11372777",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "e8c6",
+      "unicode_decimal": 59590
+    }
+  ]
+}

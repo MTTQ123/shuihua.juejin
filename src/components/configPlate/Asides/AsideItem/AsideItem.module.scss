@@ -1,0 +1,21 @@
+.asideItem{
+    height: 48px;
+    text-align: left;
+    line-height: 48px;
+
+    &:hover{
+        color: #1E80FF;
+        border-bottom: 1px solid #004aff;
+    }
+    &:focus{
+        color: #1E80FF;
+        background-color: #E6F7FF;
+        border-bottom: 1px solid #004aff;
+    }
+
+    div{
+        margin: 0 auto;
+        width: 160px;
+        overflow: hidden;
+    }
+}

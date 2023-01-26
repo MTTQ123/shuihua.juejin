@@ -1,0 +1,18 @@
+.post{
+    margin: 60px 0;
+    width: 100%;
+    .content{
+        margin: 60px 0;
+        padding: 0 8%;
+    }
+}
+
+@media screen and ( max-width:960px ) {
+    .post{
+        .content{
+            margin: 0;
+            padding: 0 5%;
+        }
+    }
+    
+}

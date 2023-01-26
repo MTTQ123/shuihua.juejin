@@ -1,5 +1,5 @@
 {
-  "name": "shuihua.share",
+  "name": "share",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,11 +13,19 @@
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "@vavt/md-editor-extension": "^1.5.0",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",
+    "md-editor-rt": "^2.7.2",
+    "mongodb": "^4.13.0",
     "next": "13.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.57.1",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "@types/marked": "^4.0.8",
+    "cross-env": "^7.0.3"
   }
 }

@@ -1,0 +1,41 @@
+.tags{
+    background-color: var(--foreground-color);
+    border-bottom: 1px solid var(--border-color);
+    .list{
+        width: 960px;
+
+        ul{
+            height: 46px;
+            li{
+                float: left;
+                font-size: 17px;
+                font-weight: 320;
+                color: #333;
+                a{
+                    margin: 0 12px;
+                    display: block;
+                    width: 36px;
+                    height: 46px;
+                    line-height: 46px;
+                }
+
+                &:first-child a{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:980px) {
+    .tags{
+        .list{
+            ul{
+                li{
+                    &:first-child a{
+                        margin-left: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

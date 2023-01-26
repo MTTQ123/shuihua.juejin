@@ -1,0 +1,73 @@
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--foreground-color);
+    
+    z-index: 1000;
+
+    .top {
+        padding: 0 60px;
+        display: flex;
+        overflow: hidden;
+        height: 60px;
+        border-bottom: 1px solid var(--border-color);
+
+        .favicon {
+            padding: 0 16px 0 10px;
+
+            .title {
+                min-width: 72px;
+                color: black;
+                line-height: 60px;
+                font-size: 18px;
+                font-weight: 500;
+                vertical-align: middle;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 19px;
+                left: 30px;
+                width: 28px;
+                height: 22px;
+                background: url(/favicon.png) no-repeat;
+                background-size: contain;
+                background-position: center;
+                line-height: 60px;
+            }
+        }
+
+        .cates {
+            margin: auto 0;
+        }
+    }
+}
+
+@media screen and (max-width:640px) {
+    .topbar {
+
+        .top {
+
+            .favicon {
+                padding: 0 24px;
+                .title {
+                    display: none;
+                }
+
+                &::before {
+                    top: 16px;
+                    left: 16px;
+                    width: 32px;
+                    height: 26px;
+                }
+            }
+
+            .cates {
+                margin: auto -66px;
+            }
+        }
+    }
+}
