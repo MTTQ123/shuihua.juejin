@@ -7,7 +7,7 @@ if (!MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
 }
 
-const uri = MONGODB_URI
+const uri = MONGODB_URI;
 const options = {}
 
 let client = new MongoClient(uri, options);
