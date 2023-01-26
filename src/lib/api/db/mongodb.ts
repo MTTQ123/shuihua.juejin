@@ -1,7 +1,6 @@
 import { MongoClient } from 'mongodb'
-import { mongodbConnection } from 'public/url'
 
-const MONGODB_URI = mongodbConnection
+const MONGODB_URI = process.env.MONGODB_URI
 
 if (!MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
@@ -16,5 +15,9 @@ let client = new MongoClient(uri, options);
 let clientPromise = client.connect();
 
 export const getClient = async () => {
+  if (await clientPromise) {
+    console.log("成功");
+    
+  }
   return clientPromise;
 }
