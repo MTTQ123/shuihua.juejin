@@ -76,16 +76,13 @@
                 margin-bottom: 10px;
 
                 width: 100%;
+                height: 22px;
                 line-height: 22px;
                 font-size: 13px;
                 color: var(--font-color-low-gray);
 
-                white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
-            }
-            .min{
-                max-width: 520px;
             }
             ul{
                 display: flex;
@@ -108,8 +105,8 @@
         }
 
         .right{
-            width: 120px;
-            height: 80px;
+            width: 108px;
+            height: 84px;
             background-image: url(/favicon.png);
         }
     }
@@ -123,14 +120,7 @@
     .articleItem{
         .bottom{
             .left{
-                flex: unset;
-                width: calc(100vw - 200px);
-                .p{
-                    max-width: 894px;
-                }
-                .min{
-                    max-width: 750px;
-                }
+                overflow: hidden;
             }
         }
     }

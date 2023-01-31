@@ -49,6 +49,9 @@ const AddItem = ({ maskCName, setMaskCName, addCate }: Props) => {
         setEle((prev) => {
             if (prev.hasTags) {
                 setNum([]);
+                setFun(setEle, (t: any) => {
+                    t.tags = [];
+                })
             }
             else {
                 setFun(setNum, (temp: any) => temp.push(temp.length))
@@ -59,6 +62,7 @@ const AddItem = ({ maskCName, setMaskCName, addCate }: Props) => {
             }
             return { ...prev, hasTags: !prev.hasTags };
         })
+        
     }
 
     // 添加子项按钮
@@ -95,7 +99,8 @@ const AddItem = ({ maskCName, setMaskCName, addCate }: Props) => {
 
 
     useEffect(() => {
-        // console.log(num);
+        console.log(num);
+        console.log(ele.tags);
     }, [num])
 
     // 点击确认添加

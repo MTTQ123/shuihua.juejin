@@ -29,7 +29,7 @@
       top: 13px;
     }
 
-    input:checked~div {
+    input:checked+div {
       display: none;
     }
 
@@ -88,22 +88,27 @@
         .one {
           margin-top: 10px;
           border: 1px solid #999;
-          overflow: hidden;
+          overflow: auto;
 
-          .line{
+          .line {
             display: flex;
             line-height: 46px;
-            
-            .nickKey{
+
+            .nickKey {
               width: 120px;
+              min-width: 120px;
               text-align: center;
 
-              &::after{
+              &::after {
                 content: ":";
               }
             }
           }
-          
+          .lineTag{
+            display: grid;
+            grid-template-columns: 260px 50%;
+          }
+
           label {
             display: block;
             width: 100%;
@@ -115,10 +120,9 @@
 
             div {
               padding: 0 20px;
-              display: flex;
-              justify-content: space-between;
+              display: grid;
+              grid-template-columns: 40% 50% 10%;
               font-size: 16px;
-
             }
           }
 
@@ -126,12 +130,14 @@
             display: none;
           }
 
-          input:checked~div {
+          input:checked+div {
             height: 0;
           }
-          input:checked~label {
-            border: none;
+
+          .d {
+            transition: all .5s;
           }
+
         }
       }
     }

@@ -1,3 +1,4 @@
+import { fromNow } from '@/lib/time';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -12,7 +13,11 @@ const ArticleItem = ({ info }: any) => {
     <div className={styles.articleItem} onClickCapture={()=>router.push(`/posts/${info.id.toString()}`)}>
       <div className={styles.top}>
         <Link href='/' className={styles.user}>{info.author}</Link>
-        <div className={styles.date}>12小时前</div>
+        <div className={styles.date}>
+          {
+            fromNow(info.createdTime)
+          }
+        </div>
         <div className={styles.tags}>
           {
             tags.map(item => <span key={item}><Link href="/">{item}</Link> </span>)
@@ -24,7 +29,7 @@ const ArticleItem = ({ info }: any) => {
           <div className={styles.title}>
             <Link href='/' title={info.title}>{info.title}</Link>
           </div>
-          <p className={`${styles.p} ${styles.min}`}>{info.contentHtml}</p>
+          <p className={`${styles.p}`}>{info.contentHtml}</p>
           <ul>
             <li>
               <i className='iconfont icon-yanjing'></i>
@@ -40,7 +45,7 @@ const ArticleItem = ({ info }: any) => {
             </li>
           </ul>
         </div>
-        <div className={styles.right}>
+        <div className={`${styles.right} ${info.imgUrl.trim()?"":"hide-must"}`}>
 
         </div>
       </div>

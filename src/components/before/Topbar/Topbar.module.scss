@@ -13,8 +13,10 @@
         overflow: hidden;
         height: 60px;
         border-bottom: 1px solid var(--border-color);
+        transition: height .4s;
 
         .favicon {
+            position: relative;
             padding: 0 16px 0 10px;
 
             .title {
@@ -30,7 +32,7 @@
                 content: '';
                 position: absolute;
                 top: 19px;
-                left: 30px;
+                left: -30px;
                 width: 28px;
                 height: 22px;
                 background: url(/favicon.png) no-repeat;
@@ -59,7 +61,7 @@
 
                 &::before {
                     top: 16px;
-                    left: 16px;
+                    left: -44px;
                     width: 32px;
                     height: 26px;
                 }

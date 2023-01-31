@@ -1,14 +1,17 @@
 .categories {
     .sel {
+        margin-left: 20px;
+        position: relative;
         display: none;
         text-align: center;
-        width: 66px;
+        line-height: 60px;
+        height: 60px;
         font-size: 17px;
         color: var(--theme-color);
         i{
             position: absolute;
-            top: 0;
-            line-height: 60px;
+            top: 17px;
+            line-height: 25px;
             margin-left: 10px;
         }
     }

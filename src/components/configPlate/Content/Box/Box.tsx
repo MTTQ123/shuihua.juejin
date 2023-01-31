@@ -1,12 +1,13 @@
 import styles from './Box.module.scss'
 
 type Props = {
-  children: any
+  children: any,
+  className?: string
 }
 
-const Box = ({ children }: Props) => {
+const Box = ({ children, className="" }: Props) => {
   return (
-    <div className={styles.box}>
+    <div className={`${styles.box} ${className}`}>
       {children}
     </div>
   )

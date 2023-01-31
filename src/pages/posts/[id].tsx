@@ -11,7 +11,7 @@ const Post = ({ postData,topList }: any) => {
     
     return (
         <div className={styles.post}>
-            <Topbar topList={topList}></Topbar>
+            <Topbar topList={topList} hideTags={true}></Topbar>
             <Link href="/">首页</Link>
             <MdEditor className={styles.content} modelValue={postData.contentHtml} previewTheme="smart-blue" previewOnly/>
         </div>

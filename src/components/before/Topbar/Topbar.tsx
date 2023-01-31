@@ -19,7 +19,7 @@ const checkName = (list: [], name: string, setFun: Function) => {
 }
 
 
-const Topbar = ({ topList, c = {}, isPreview = false, hideTags = true, hHandler = (b: boolean) => { } }: any) => {
+const Topbar = ({ topList, c = {}, isPreview = false, hideTags = false, hHandler = (b: boolean) => { } }: any) => {
     const router = useRouter();
 
     // 获取topbar元素（方便获取其高度，并通知父组件）
@@ -28,8 +28,39 @@ const Topbar = ({ topList, c = {}, isPreview = false, hideTags = true, hHandler 
     // 存储当前选择的类别
     const [cur, setCur] = useState(topList[0]);
 
+    // 
+    const [isShow, setIsShow] = useState("")
+
+    /**
+     * 滚动事件的处理
+     */
+    let scrollTop = 0
+    let topValue = 0
+    const getScollTop = () => {
+        let scrollTop = 0;
+        if (document?.documentElement && document?.documentElement?.scrollTop) {
+            scrollTop = document?.documentElement.scrollTop;
+        }
+        else if (document?.body) {
+            scrollTop = document?.body.scrollTop;
+        }
+        return scrollTop;
+    }
+
+    const bindHandleScroll = () => {
+        scrollTop = getScollTop();
+        if (scrollTop >= topValue && scrollTop > 180) {
+            setIsShow("hide-must-h")
+        }
+        else {
+            setIsShow("")
+        }
+        setTimeout(function () { topValue = scrollTop; }, 0);
+    }
+
     // 路由改变，当前标签改变
     useEffect(() => {
+        window.addEventListener("scroll", bindHandleScroll)
 
         // 如果是在配置模块的预览区
         // 点击时获取目标并判断是否隐藏
@@ -68,7 +99,7 @@ const Topbar = ({ topList, c = {}, isPreview = false, hideTags = true, hHandler 
 
     return (
         <div className={`${styles.topbar} mw ${c}`} ref={topbarRef}>
-            <div className={styles.top}>
+            <div className={`${styles.top} ${isShow}`}>
                 <div className={styles.favicon}>
                     <h2 className={styles.title}>稀土掘金</h2>
                 </div>

@@ -7,18 +7,6 @@ import Box from '../Box/Box'
 import AddItem from './AddTag/AddItem';
 import styles from './topbarConfig.module.scss'
 
-const LIST_INIT: any[] = [{
-  "hasTags": true,
-  "name": "首页",
-  "id": "recommended",
-  "tags": [
-    {
-      "name": "综合",
-      "id": "/"
-    }
-  ],
-  "isCate": true
-}]
 type Props = {
   topbars: any[]
 }
@@ -81,18 +69,18 @@ const TopbarConfig = ({ topbars}:Props) => {
         <div>
           {
             list.length === 0 ? <div>暂无导航，请添加一个导航</div>
-              : list.map((item: Item) => {
+              : list.map((item: Item,index) => {
                 return (
                   <div key={item.id} className={styles.one}>
-                    <input type="checkbox" id={item.id} />
                     <label htmlFor={item.id}>
                       <div>
-                        <span>{item.name}</span>
+                        <span>{`${index+1}${item.name}`}</span>
                         <span>{'/' + item.id}</span>
                         <span>{item.hasTags ? "有子标签" : "无子标签"}</span>
                       </div>
                     </label>
-                    <Box>
+                    <input type="checkbox" id={item.id} />
+                    <Box className={styles.d}>
                       <div className={styles.line}>
                         <div className={styles.nickKey}>名称</div>
                         <div className={styles.nickVal}>{item.name}</div>
@@ -104,12 +92,15 @@ const TopbarConfig = ({ topbars}:Props) => {
                       <div className={styles.line}>
                         <div className={styles.nickKey}>子标签</div>
                         <div className={styles.nickVal}>
+                          {
+                            item.hasTags ? <br /> : null
+                          }
                           {item.hasTags ? (
                             item.tags.map((tag: Tag) => {
                               return (
-                                <div key={tag.id} className={styles.line}>
-                                  <br />
-                                  <div className={styles.nickKey}>{tag.name}</div>
+                                <div key={tag.id} className={styles.lineTag}>
+                                  
+                                  <div className={styles.nickKeyW}>{tag.name}</div>
                                   <div className={styles.nickVal}>{tag.id}</div>
                                 </div>
                               )

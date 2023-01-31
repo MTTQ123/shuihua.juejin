@@ -37,7 +37,7 @@ export default function Home({ id, postData, topList }: Props) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.box}>
-                <Topbar topList={topList} hHandler={checkedHandler} hideTags={false}></Topbar>
+                <Topbar topList={topList} hHandler={checkedHandler}></Topbar>
                 <input type="checkbox" className={`${styles.ipt} `} id="ipt" />
                 <div className={`${styles.content} w`}>
                     <div className={styles.main}>

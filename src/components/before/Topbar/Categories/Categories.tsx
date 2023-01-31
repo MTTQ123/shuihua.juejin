@@ -38,7 +38,7 @@ const Categories = ({ children, list, curName, isPreview }: Props) => {
       setCates("")
     }
     // 如果是预览，就阻止路由跳转
-    if(isPreview){
+    if (isPreview) {
       e.preventDefault();
     }
   }
