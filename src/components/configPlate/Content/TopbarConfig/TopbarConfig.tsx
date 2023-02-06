@@ -1,7 +1,6 @@
 import Topbar from '@/components/before/Topbar/Topbar'
 import { Item, Tag } from '@/lib/type/topbarTypes';
 import EasyBtn from '@/UI/Button/EasyBtn';
-import { apiUrl } from 'public/url';
 import { MouseEventHandler, useState } from 'react';
 import Box from '../Box/Box'
 import AddItem from './AddTag/AddItem';
@@ -34,14 +33,8 @@ const TopbarConfig = ({ topbars}:Props) => {
   }
 
   // 点击保存按钮，将本地数据存储到数据库
-  // -1：未保存
-  //  1：保存
-  //  1：保存
-  const [saveState, setSaveState] = useState(-1);
   const saveHandler: MouseEventHandler = async () => {
-    setSaveState(1);
-
-    await fetch(`${apiUrl}topbar/addTopbar`, {
+    await fetch(`/api/topbar/addTopbar`, {
       method: "POST",
       body: JSON.stringify(list)
     });

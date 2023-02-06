@@ -22,8 +22,18 @@ li{
   list-style: none;
 }
 
+
+/* 常用公共样式 */
+.bg-cover{
+  /* 背景全覆盖 */
+  background-position: center;
+  background-size: cover;
+}
 .active.active.active{
   color:var(--theme-color);
+}
+.marg-bottom{
+  margin-bottom: 16px;
 }
 .show-must{
   display: block!important;
@@ -36,6 +46,23 @@ li{
 }
 .w{
   margin: 0 auto !important;
+}
+.scroll-bar::-webkit-scrollbar {
+  margin-right: 10px;
+  width: 4px;
+  height: 4px;
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+  width: 6px;
+  height: 98%;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #d4aa70;
 }
 
 

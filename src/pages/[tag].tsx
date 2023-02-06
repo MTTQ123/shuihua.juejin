@@ -1,19 +1,23 @@
-import { GetServerSideProps } from 'next/types'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
-import styles from '@/styles/Main.module.scss'
+import Link from 'next/link'
+import { GetServerSideProps } from 'next/types'
+
 import Topbar from '@/components/before/Topbar/Topbar'
 import ArticleList from '@/components/before/Main/ArticleList/ArticleList'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import Aside from '@/components/before/Main/Aside/Aside'
+
+import styles from '@/styles/Main.module.scss'
 import { apiUrl } from 'public/url'
 
 type Props = {
     id: string
     postData: [any],
-    topList: any[]
+    topList: any[],
+    adList: any[]
 }
 
-export default function Home({ id, postData, topList }: Props) {
+export default function Home({ id, postData, topList, adList }: Props) {
 
     // 从Topbar组件获取其高度来设置main区域顶部内边距
     // （>100）checked为false，不选中，为120px
@@ -49,7 +53,7 @@ export default function Home({ id, postData, topList }: Props) {
                         <ArticleList postData={postData}></ArticleList>
                     </div>
                     <div className={styles.right}>
-                        111
+                        <Aside adList={adList}></Aside>
                     </div>
 
                 </div>
@@ -64,14 +68,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     const { tag } = context.query;
 
-    const res = await fetch(`${apiUrl}article/${tag}`).then(res => res.json());
-    const topbars = await fetch(`${apiUrl}/topbar/getAllTopbar`).then(res => res.json());
+    const res = await fetch(`${apiUrl}/article/${tag}`).then(res => res.json());
+    const topbars = await fetch(`${apiUrl}topbar/getAllTopbar`).then(res => res.json());
+    const ads = await fetch(`${apiUrl}ad/getAllAds`).then(res => res.json());
 
     return {
         props: {
             id: tag,
             postData: res,
             topList: topbars,
+            adList: ads
         }
     }
 }

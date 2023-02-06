@@ -1,0 +1,155 @@
+.adConfig {
+  display: flex;
+  .previewBox {
+    position: relative;
+    margin: 20px 0;
+    padding: 0 60px;
+    width: 360px;
+    border: 1px solid rgb(199, 213, 224);
+    border-radius: 20px;
+
+    h4 {
+      padding: 10px 40px 10px;
+      text-align: center;
+      line-height: 34px;
+      font-size: 26px;
+    }
+
+    input {
+      display: none;
+    }
+
+    label {
+      position: absolute;
+      right: 10px;
+      top: 13px;
+    }
+
+    input+div {
+      max-height: 450px;
+      overflow: auto;
+    }
+
+    input:checked+div {
+      display: none;
+    }
+
+    .preview {}
+  }
+
+  .box {
+    margin: 0 auto;
+    width: 94%;
+    flex: 1;
+    height: calc(80vh - 190px);
+    border: 1px solid rgb(199, 213, 224);
+    border-radius: 20px;
+    overflow: hidden;
+
+    >div {
+      &:first-child {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 10px 40px;
+      }
+
+      &:last-child {
+        padding: 0 30px 20px;
+        width: 100%;
+        height: calc(100% - 40px);
+        overflow: overlay;
+
+        &::-webkit-scrollbar {
+          position: absolute;
+          margin-right: 10px;
+          width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+          width: 6px;
+          height: 98%;
+          background: #fff;
+          border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background: #d4aa70;
+        }
+
+
+        .one {
+          margin-top: 10px;
+          border: 1px solid #999;
+          overflow: auto;
+
+          .line {
+            display: flex;
+            line-height: 46px;
+
+            .nickKey {
+              width: 120px;
+              min-width: 120px;
+              text-align: center;
+
+              &::after {
+                content: ":";
+              }
+            }
+          }
+
+          .lineTag {
+            display: grid;
+            grid-template-columns: 260px 50%;
+          }
+
+          label {
+            display: block;
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            font-size: 18px;
+            border-bottom: 1px solid #999;
+            overflow: hidden;
+
+            div {
+              padding: 0 20px;
+              display: grid;
+              grid-template-columns: 40% 50% 10%;
+              font-size: 16px;
+            }
+          }
+
+          input {
+            display: none;
+          }
+
+          input:checked+div {
+            height: 0;
+          }
+
+          .d {
+            transition: all .5s;
+          }
+
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width:800px) {
+  .adConfig{
+    flex-direction: column;
+    .previewBox{
+      margin: 10px auto;
+
+      input+div {
+        max-height: 220px;
+      }
+    }
+
+  }
+}

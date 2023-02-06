@@ -6,10 +6,11 @@ import { apiUrl } from 'public/url'
 
 type props = {
   id: string,
-  topbars: any[]
+  topbars: any[],
+  ads:any[]
 }
 
-const Common = ({ id, topbars }: props) => {
+const Common = ({ id, topbars, ads }: props) => {
   return (
     <>
       <title>水花仿掘金版块配置系统</title>
@@ -26,7 +27,7 @@ const Common = ({ id, topbars }: props) => {
               <Aside></Aside>
             </div>
             <div className={styles.content}>
-              <Content topbars={topbars} id={id}></Content>
+              <Content topbars={topbars} ads={ads} id={id}></Content>
             </div>
           </div>
         </main>
@@ -40,10 +41,12 @@ export default Common
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
   const topbars = await fetch(`${apiUrl}topbar/getAllTopbar`).then(res => res.json());
+  const ads = await fetch(`${apiUrl}/ad/getAllAds`).then(res => res.json());
   return {
     props: {
       id,
-      topbars
+      topbars,
+      ads
     },
   }
 }
